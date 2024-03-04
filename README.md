@@ -27,9 +27,9 @@ My portfolio website is designed to showcase my professional journey, including 
 ## Folder Structure 
 
 src
--assets
--components
--Data
--pages
+- assets
+- components
+- Data
+- pages
 
 
