@@ -26,22 +26,10 @@ My portfolio website is designed to showcase my professional journey, including 
 
 ## Folder Structure 
 
-gaurav-gorade-portfolio/
-
-│
-├── src/
-│   ├── assets/
-│   │
-│   ├── components/
-│   │   
-│   ├── Data/
-│   │
-│   ├── pages/
-│   │
-│   ├── App.js
-│   ├── index.js
-│   └── index.css   
-│   
-
+src
+-assets
+-components
+-Data
+-pages
 
 
