@@ -1,13 +1,604 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Import Font */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:wght@400;800&display=swap');
+
+
+/*  custom font */
+@font-face {
+  font-family: GD Sherpa;
+  src: url(./assets/font/GD_Sherpa-RegularWeb.ttf);
 }
 
+/* Reset default styles */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "GD Sherpa", 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f4f4f4;
+
+
+
+}
+
+/* Set base font size */
+
+/* In general, 1 rem equals 16 px, thus if we reduce the html font size to 62,5%, 1 rem equals 10 px, 2 rem equals 20 px, and so on. As a result, it makes it easier to calculate relative length units such as rem. */
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+/* Code font */
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+/* Header */
+
+.header-wraper{
+  padding: 1.4rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1920px;
+  margin: auto;
+  
+}
+header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #a0a0a04d;
+ 
+}
+
+/* Logo */
+.logo {
+
+  font-style: normal;
+  display: inline-block;
+  text-decoration: none;
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: #231f20;
+  letter-spacing: 2px;
+
+}
+
+/* Navigation */
+.nav-list {
+
+  list-style: none;
+  display: flex;
+
+}
+
+.nav-list li {
+  padding: 0px 15px;
+  border-right: 1px solid #a0a0a04d;
+}
+
+.nav-list li:last-child {
+  border-right: none;
+  /* Remove border-right from the last li */
+}
+
+.nav-link:link,
+.nav-link:visited {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: #231f20;
+  transition: color 0.4s;
+}
+
+.nav-link:hover,
+.nav-link:active {
+  color: #00838c;
+}
+
+/* Mobile Navigation Icon */
+.mobile-nav-icon {
+  width: 2rem;
+  height: 2rem;
+  color: #231f20;
+  transition: color 0.4s;
+
+}
+
+.mobile-nav-icon:hover {
+  color: #00838c;
+}
+
+/* Mobile Navigation Button */
+.mobile-nav-btn {
+  display: none;
+  background-color: transparent;
+  cursor: pointer;
+
+}
+
+.mobile-nav-icon[name="close-outline"] {
+  display: none;
+}
+
+/* Header Reponsive Design */
+@media (max-width: 62em) {
+  .header {
+    position: relative;
+  }
+
+  .mobile-nav-btn {
+    display: block;
+    z-index: 999;
+  }
+
+  .nav {
+    width: 70%;
+    height: 100vh;
+    background-color: #ffffff;
+    border: 1px solid #a0a0a04d;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    transform: translateX(100%);
+    transition: all 0.5s linear;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 10;
+
+  }
+
+  .nav-list {
+
+    flex-direction: column;
+    gap: 3rem;
+    width: inherit;
+    justify-content: center;
+
+
+
+  }
+
+  .nav-list li {
+    border-right: none;
+    border-bottom: 1px dotted #a0a0a04d;
+    padding: 1.5rem 2rem;
+    /* background-color: #00838c; */
+
+  }
+
+  .active .nav {
+    transform: translateX(0);
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .active .mobile-nav-btn .mobile-nav-icon[name="close-outline"] {
+    display: block;
+  }
+
+  .active .mobile-nav-btn .mobile-nav-icon[name="menu-outline"] {
+    display: none;
+  }
+}
+
+
+/* Sidebar  */
+.sidebar {
+  margin: 2rem;
+  padding: 2rem 2rem;
+  width: 30%;
+  background-color: #ffffff;
+  border: 1px solid #a0a0a04d;
+  align-self: flex-start;
+
+}
+
+.avatar-logo {
+  /* background-color: #f4f4f4; */
+  width: 16rem;
+  height: 16rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  border-radius: 50%;
+  overflow: hidden;
+  /* border: 1px dotted #a0a0a04d; */
+  margin-bottom: 1rem;
+}
+
+.avatar-logo img {
+  width: 19rem;
+  height: 19rem;
+  object-fit: contain;
+  margin: auto;
+}
+
+@media (max-width: 62em) {
+  .sidebar {
+    width: calc(100% - 4rem);
+    margin: 1rem;
+    padding: 1rem 1rem;
+
+  }
+}
+
+
+
+.wrapper {
+  display: flex;
+  max-width: 1920px;
+  margin: auto;
+}
+
+/* Main Wrpper */
+.main {
+  margin: 2rem;
+  padding: 2rem 2rem;
+  width: 70%;
+  background-color: #ffffff;
+  border: 1px solid #a0a0a04d;
+  align-self: flex-start;
+}
+
+@media (max-width: 62em) {
+
+  .wrapper {
+    display: flex;
+    flex-wrap: wrap-reverse;
+
+  }
+
+
+  .main {
+    width: calc(100% - 4rem);
+    margin: 1rem;
+    padding: 1rem 1rem;
+
+
+
+  }
+}
+
+
+
+/* Main Title */
+.main-title {
+  font-size: 3.8rem;
+}
+
+
+
+
+/* Social Icons */
+.social-icons {
+  display: inline-flex;
+  gap: 2rem;
+  padding-right: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+
+.social-icon {
+  width: 2rem;
+  height: 2rem;
+  color: #00838c;
+  transition: color 0.4s;
+  cursor: pointer;
+
+}
+
+.social-icon:hover {
+  color: #00838c;
+}
+
+
+
+
+
+
+
+/* Utils */
+
+embed {
+  width: 100%;
+  height: 80vh;
+}
+
+
+
+hr {
+
+  color: #a0a0a04d;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+
+}
+
+.title {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+  font-size: 2.4rem;
+  color: #3c3b3b;
+  font-weight: bolder;
+  letter-spacing: 2px;
+  text-decoration: none;
+  display: block;
+  word-wrap: break-word;
+
+
+}
+
+.secondary-title {
+  text-decoration: none;
+  font-size: 1.8rem;
+  /* font-family: "Poppins", sans-serif; */
+  font-weight: bold;
+  font-style: normal;
+  color: #00838c;
+  display: inline-block;
+  line-height: 4rem;
+  word-wrap: break-word;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  /* margin-bottom: 1rem; */
+
+}
+
+.sub-title {
+  text-decoration: none;
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: #231f20;
+  display: inline-block;
+  color: #00838c;
+  line-height: 4rem;
+  word-wrap: break-word;
+}
+
+.text {
+  font-size: 1.6rem;
+  color: #231f20;
+  font-weight: 900;
+
+}
+
+.link:link,
+.link:visited {
+  text-decoration: none;
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: #00838c;
+  transition: color 0.4s;
+}
+
+.link:hover,
+.link:active {
+  border-bottom: 2px solid #00838c;
+}
+
+
+
+.button {
+  font-size: 1.1rem;
+  line-height: 1.6rem;
+  text-decoration: none;
+  text-align: center;
+  display: block;
+  background-color: #ffffff;
+  padding: 1rem 2rem;
+  font-family: "GD Sherpa", 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  word-wrap: break-word;
+  cursor: pointer;
+  font-weight: bolder;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+}
+
+.button:hover {
+  color: #00838c;
+  border: 2px solid #00838c;
+}
+
+
+/* Scrollbar */
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #a0a0a04d;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #00838cb2;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #00838c;
+}
+
+
+/* Resume page */
+
+.resume {
+  margin: -2rem;
+  padding: -2rem -2rem;
+}
+
+@media (max-width: 62em) {
+  .resume {
+    margin: -1rem;
+    padding: -2rem -2rem;
+  }
+}
+
+
+/* Progress bar */
+
+.progress-bar {
+  height: 3.5rem;
+  width: 100%;
+  background-color: #e2e1e1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+  z-index: 1;
+
+
+}
+
+.progress-fill {
+  background-color: #00838c;
+  height: 3.5rem;
+  width: 0%;
+
+}
+
+.progress-label {
+  position: absolute;
+  font-size: 1.6rem;
+  color: #231f20;
+  font-weight: 600;
+  background-color: #ffffff;
+  height: calc(100% - 1.6rem);
+  padding: 0.5rem 2rem;
+  display: flex;
+  align-items: center;
+  border: 1px solid #a0a0a04d;
+  margin-left: 2px;
+
+}
+
+.progress-rating {
+  position: absolute;
+  right: 0;
+  font-size: 1.6rem;
+  color: #231f20;
+  font-weight: 600;
+  background-color: #ffffff;
+  height: calc(100% - 1.6rem);
+  padding: 0.5rem 2rem;
+  display: flex;
+  align-items: center;
+  border: 1px solid #a0a0a04d;
+  margin-right: 2px;
+}
+
+/* Loader */
+
+.loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.loader-animation {
+  width: 25px;
+  height: 25px;
+  border: 3px solid #ccc;
+  border-radius: 50%;
+  border-top-color: #00838c;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* Skills  */
+
+.tools-icons {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.tool-icon {
+  font-size: 1.6rem;
+  color: #231f20;
+  font-weight: 600;
+  background-color: #ffffff;
+  padding: 1rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #a0a0a04d;
+
+}
+
+.project-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.project-card {
+  font-size: 1.6rem;
+  color: #231f20;
+  font-weight: 600;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #a0a0a04d;
+  width: 25rem;
+}
+
+.project-card img {
+  width: 25rem;
+  height: 18rem;
+  object-fit: fill;
+  border-bottom: 1px solid #a0a0a04d;
+
+
+}
+
+.project-card .text {
+  padding: 0.5rem;
+}
+
+.project-card a {
+  padding-bottom: 1rem;
+  padding-left: 0.5rem;
+  color: #00838c;
+}
+
+@media (max-width: 62em) {
+  .project-card {
+    width: 100%;
+  }
+
+  .project-card img {
+    width: 100%;
+  }
+}
+
+a{
+  text-decoration: none;
 }

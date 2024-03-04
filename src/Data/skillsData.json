@@ -1,0 +1,39 @@
+[
+    {
+      "skill": "Html 5 & CSS 3",
+      "rating": "8"
+    },
+    {
+      "skill": "Javascript",
+      "rating": "7"
+    },
+    {
+      "skill": "React",
+      "rating": "7"
+    },
+    {
+      "skill": "Bootstrap",
+      "rating": "8"
+    },
+    {
+      "skill": "Tailwind",
+      "rating": "7"
+    },
+    {
+      "skill": "Express",
+      "rating": "6"
+    },
+    {
+      "skill": "Redux",
+      "rating": "6"
+    },
+    {
+      "skill": "MongoDB",
+      "rating": "7"
+    },
+    {
+      "skill": "MySQL",
+      "rating": "6"
+    }
+  ]
+  

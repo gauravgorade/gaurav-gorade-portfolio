@@ -1,0 +1,27 @@
+[
+  {
+    "url": "/",
+    "title": "Home | Gaurav Gorade",
+    "description": "Welcome to my portfolio! With over 2 years in web development, I specialize in crafting engaging user experiences, primarily focusing on front-end development while maintaining full-stack proficiency."
+  },
+  {
+    "url": "/skills",
+    "title": "Skills | Gaurav Gorade",
+    "description": "Explore Gaurav Gorade's expertise and journey in web development. Discover mastery and innovation."
+  },
+  {
+    "url": "/projects",
+    "title": "Projects | Gaurav Gorade",
+    "description": "Discover Gaurav Gorade's portfolio and explore past projects and achievements."
+  },
+  {
+    "url": "/resume",
+    "title": "Resume | Gaurav Gorade",
+    "description": "View Gaurav Gorade's professional experience, qualifications, and accomplishments."
+  },
+  {
+    "url": "/contact",
+    "title": "Contact | Gaurav Gorade",
+    "description": "Get in touch with Gaurav Gorade to discuss collaborations, opportunities, or inquiries."
+  }
+]
